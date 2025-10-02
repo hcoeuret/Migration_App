@@ -1,0 +1,95 @@
+# This .gitignore file is for Unity projects
+
+# =============== #
+# Unity generated #
+# =============== #
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# ============ #
+# OS Specific  #
+# ============ #
+
+# Windows
+[Dd]ebug*/
+*.user
+*.suo
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+*.lock
+*.log
+
+# Linux
+*~
+.nfs*
+
+# ===================== #
+# Unity Cloud Build     #
+# ===================== #
+/[Cc]ache/
+
+# ======================== #
+# Auto-generated VS/JetBrains #
+# ======================== #
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.sln.*
+*.tmp
+*.user
+*.userprefs
+
+# Rider
+*.sln.iml
+
+# =============== #
+# Builds          #
+# =============== #
+*.apk
+*.aab
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+
+# =============== #
+# Unity Collab    #
+# =============== #
+.collab/
+
+# =============== #
+# Addressables    #
+# =============== #
+/ServerData/
+
+# ========================= #
+# Others                   #
+# ========================= #
+*.unitypackage
+*.log
+*.bak
+*.orig
+
+# Uncomment if you have a Packages folder with local dependencies
+# /Packages/
+
+# Uncomment if using Plastic SCM (used by Unity now)
+# *.plastic/
+# *.plasticlib/
+
+.vs/
