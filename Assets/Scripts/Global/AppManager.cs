@@ -27,4 +27,16 @@ public class AppManager : MonoBehaviour
         Debug.Log("Initializing Map");
         SceneManager.LoadScene("MapScene");
     }
+
+    void SwitchToMapScene()
+    {
+        Debug.Log("Loading Map Scene");
+        SceneManager.LoadScene("MapScene");
+    }
+
+    void SwitchToFlyScene()
+    {
+        Debug.Log("Loading Fly Scene");
+        SceneManager.LoadScene("MapScene");
+    }
 }
