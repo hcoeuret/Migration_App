@@ -1,8 +1,8 @@
 using UnityEngine;
 
+[System.Serializable]
 public class PanelEntries
 {
-    public PanelType ptype;
-    public GameObject panel;
-    
+    public PanelType pType;
+    public GameObject panelGO;
 }
