@@ -1,42 +1,40 @@
-using UnityEngine;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
-public class UIManager : MonoBehaviour
+public class MapUIManager : MonoBehaviour
 {
-    //Set as a singleton
-    public static UIManager Instance { get; private set; }
-
+ 
     [SerializeField] List<PanelEntries> panelsInput;
     Dictionary<PanelType, GameObject> panels;
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(this);
         FillPanelDict();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DisplayPanel(PanelType.MapMainPanel, null);
     }
 
     public void DisplayPanel(PanelType pType, object arg)
     {
         if (panels.ContainsKey(pType))
         {
-            foreach(var entry in panels)
+            foreach (var entry in panels)
             {
                 entry.Value.SetActive(false);
             }
             panels[pType].SetActive(true);
+
+            // Find the component implementing IPanel
+            var panelInterface = panels[pType].GetComponent<IPanel>();
+            if (panelInterface != null)
+            {
+                panelInterface.ShowPanel(arg);
+            }
+            else
+            {
+                Debug.LogWarning($"Panel {pType} does not implement IPanel interface.");
+            }
         }
     }
 

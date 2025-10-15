@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMapPanel : MonoBehaviour
+public class MainMapPanel : MonoBehaviour, IPanel
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private Button startFlightButton;
+    MapUIManager mapUIManager;
     void Start()
     {
-        // Wait for AppManager to be available
+        mapUIManager = GetComponent<MapUIManager>();
+
         if (AppManager.Instance != null)
         {
             Debug.Log("App Manager found");
@@ -17,19 +19,8 @@ public class MainMapPanel : MonoBehaviour
         {
             // AppManager not ready yet, wait a frame
             Debug.Log("AppManager not found");
-            StartCoroutine(WaitForAppManager());
         }
         
-    }
-
-    private System.Collections.IEnumerator WaitForAppManager()
-    {
-        // Wait until AppManager.Instance is available
-        while (AppManager.Instance == null)
-        {
-            yield return null;
-        }
-        startFlightButton.onClick.AddListener(SetupButton);
     }
 
     // Update is called once per frame
@@ -38,10 +29,14 @@ public class MainMapPanel : MonoBehaviour
         
     }
 
+    public void ShowPanel(object arg)
+    {
+        //Do nothing
+    }
+
     void SetupButton()
     {
+        mapUIManager.DisplayPanel(PanelType.FlightMainPanel, 60);
         Debug.Log("Button was clicked");
-        AppManager.Instance.SwitchToFlyScene();
-        
     }
 }
