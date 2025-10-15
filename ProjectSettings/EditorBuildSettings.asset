@@ -12,12 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/BootstrapScene.unity
     guid: 79e81ef78f1e7404cb82ce679064af58
   - enabled: 1
-    path: Assets/Scenes/MapScene.unity
-    guid: d98ed7d8d56fc6542ae0adcd4ef32ec1
-  - enabled: 1
     path: Assets/Scenes/FlightScene.unity
     guid: a46ff577a3a86df43b2bfbf3ce995556
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: d98ed7d8d56fc6542ae0adcd4ef32ec1
   m_configObjects:
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 65a89630f80f044ae9999980a796f720, type: 2}
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 75389da28d48cb6409bdf698c599a503, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8b640767d72756a4fb6b9c29e8752260, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5bd2c3d10eb8d924ba09762062965f93, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

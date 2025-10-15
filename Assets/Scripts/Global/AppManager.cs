@@ -37,6 +37,6 @@ public class AppManager : MonoBehaviour
     public void SwitchToFlyScene()
     {
         Debug.Log("Loading Fly Scene");
-        SceneManager.LoadScene("MapScene");
+        SceneManager.LoadScene("FlightScene");
     }
 }
