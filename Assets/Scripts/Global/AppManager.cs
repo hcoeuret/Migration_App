@@ -28,13 +28,13 @@ public class AppManager : MonoBehaviour
         SceneManager.LoadScene("MapScene");
     }
 
-    void SwitchToMapScene()
+    public void SwitchToMapScene()
     {
         Debug.Log("Loading Map Scene");
         SceneManager.LoadScene("MapScene");
     }
 
-    void SwitchToFlyScene()
+    public void SwitchToFlyScene()
     {
         Debug.Log("Loading Fly Scene");
         SceneManager.LoadScene("MapScene");
