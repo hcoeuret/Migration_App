@@ -17,6 +17,8 @@ public class MainFlightPanel : MonoBehaviour, IPanel
     public void ShowPanel(object arg)
     {
         counterValue = AppState.Instance.counter;
+        timeLeftSlider.maxValue = counterValue;
+        timeLeftSlider.value = 0;
         if (timerCoroutine != null)
         {
             StopCoroutine(timerCoroutine);
@@ -49,15 +51,17 @@ public class MainFlightPanel : MonoBehaviour, IPanel
 
     private IEnumerator TimerCoroutine()
     {
-        
-
         while (counterValue > 0)
         {
             counterText.text = counterValue.ToString();
             yield return new WaitForSeconds(1f);
             counterValue--;
+            timeLeftSlider.value++;
         }
-
-
+        if (counterValue == 0)
+        {
+            AppManager.Instance.SwitchToMapScene();
+        }
+        
     }
 }
