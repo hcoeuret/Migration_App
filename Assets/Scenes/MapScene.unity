@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 1245947734}
   - component: {fileID: 1245947733}
   - component: {fileID: 1245947732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossPf: {fileID: 3037489341506648648, guid: b33116d2e445da64a800b008b7ddd8d5, type: 3}
+  crossFuturePf: {fileID: 3037489341506648648, guid: 452bfa933f216504da66d37072919182, type: 3}
   cam: {fileID: 362836044}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &1488157439
 Transform:
   m_ObjectHideFlags: 0
