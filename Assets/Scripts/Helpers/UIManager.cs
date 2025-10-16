@@ -9,25 +9,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] List<PanelEntries> panelsInput;
     Dictionary<PanelType, GameObject> panels;
 
-    void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(this);
-        FillPanelDict();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void DisplayPanel(PanelType pType, object arg)
     {
         if (panels.ContainsKey(pType))
@@ -37,10 +18,11 @@ public class UIManager : MonoBehaviour
                 entry.Value.SetActive(false);
             }
             panels[pType].SetActive(true);
+            panels[pType].GetComponent<IPanel>()?.ShowPanel(null);            ;
         }
     }
 
-    void FillPanelDict()
+    protected void FillPanelDict()
     {
         // Fill the dictionary from the serialized list
         panels = new Dictionary<PanelType, GameObject>();

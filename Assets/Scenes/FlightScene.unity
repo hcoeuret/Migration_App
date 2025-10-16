@@ -480,6 +480,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923630473}
   m_CullTransparentMesh: 1
+--- !u!1 &954070085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 954070086}
+  - component: {fileID: 954070087}
+  m_Layer: 0
+  m_Name: FlightUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &954070086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954070085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 90.33362, y: 0, z: 15944.583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954070087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954070085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21694608480ced4f84888fe703ba17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelsInput:
+  - pType: 1
+    panelGO: {fileID: 1186324297}
 --- !u!1 &1040013645
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +734,7 @@ GameObject:
   - component: {fileID: 1186324298}
   - component: {fileID: 1186324300}
   - component: {fileID: 1186324299}
+  - component: {fileID: 1186324301}
   m_Layer: 5
   m_Name: MainFlightPanel
   m_TagString: Untagged
@@ -754,6 +802,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186324297}
   m_CullTransparentMesh: 1
+--- !u!114 &1186324301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186324297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be44268cddbcbbc46b72b53dee6e2e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeftSlider: {fileID: 1479530182}
+  counterText: {fileID: 1611312252}
+  cancelButton: {fileID: 2087220161}
 --- !u!1 &1227399243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,3 +1598,4 @@ SceneRoots:
   - {fileID: 448275753}
   - {fileID: 1290825810}
   - {fileID: 870765553}
+  - {fileID: 954070086}

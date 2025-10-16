@@ -1,6 +1,7 @@
-using TMPro;
-using UnityEngine;
 using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class MainFlightPanel : MonoBehaviour, IPanel
@@ -10,24 +11,17 @@ public class MainFlightPanel : MonoBehaviour, IPanel
     [SerializeField] private Button cancelButton;
     private Coroutine timerCoroutine;
 
-    private int counterValue = 0;
+    private int counterValue = 0;   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public void ShowPanel(object arg)
     {
-        if (arg is int number)
+        counterValue = AppState.Instance.counter;
+        if (timerCoroutine != null)
         {
-            counterValue = number;
-            if (timerCoroutine != null)
-            {
-                StopCoroutine(timerCoroutine);
-            }
-            timerCoroutine = StartCoroutine(TimerCoroutine());
+            StopCoroutine(timerCoroutine);
         }
-        else
-        {
-            Debug.Log("Wrong timer value");
-        } 
+        timerCoroutine = StartCoroutine(TimerCoroutine());
     }
     void Start()
     {

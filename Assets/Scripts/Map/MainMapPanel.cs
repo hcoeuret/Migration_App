@@ -36,7 +36,9 @@ public class MainMapPanel : MonoBehaviour, IPanel
 
     void SetupButton()
     {
-        mapUIManager.DisplayPanel(PanelType.FlightMainPanel, 60);
         Debug.Log("Button was clicked");
+        AppManager.Instance.SwitchToFlyScene();
+        AppState.Instance.counter = 60;
+        
     }
 }
