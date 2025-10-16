@@ -9,6 +9,7 @@ public class MainFlightPanel : MonoBehaviour, IPanel
     [SerializeField] private Slider timeLeftSlider;
     [SerializeField] private TMP_Text counterText;
     [SerializeField] private Button cancelButton;
+    
     private Coroutine timerCoroutine;
 
     private int counterValue = 0;   
@@ -37,7 +38,7 @@ public class MainFlightPanel : MonoBehaviour, IPanel
         
     }
 
-
+    
     void CancelWait()
     {
         if (timerCoroutine != null)
