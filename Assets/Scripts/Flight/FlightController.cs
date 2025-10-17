@@ -44,7 +44,8 @@ public class FlightController : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            Instantiate(birdDatabase.GetBirdPrefab(AppState.Instance.playerBirds[i]), positions[i], Quaternion.identity);
+            GameObject tempBird = birdDatabase.GetBirdPrefab(AppState.Instance.playerBirds[i]);
+            Instantiate(tempBird, positions[i], tempBird.transform.rotation);
         }
     }
 
@@ -76,7 +77,8 @@ public class FlightController : MonoBehaviour
         cam.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
         //Display prefab of new bird and make it rotate
-        spawnbird = Instantiate(birdDatabase.GetBirdPrefab(generatedBird), new Vector3(0f, 0f, 73.4f), Quaternion.identity);
+        GameObject tempBird2 = birdDatabase.GetBirdPrefab(generatedBird);
+        spawnbird = Instantiate(tempBird2, new Vector3(0f, 0f, 73.4f), tempBird2.transform.rotation);
 
         //Switch panel
         uiManager.ShowEndOfFlight(generatedBird);
