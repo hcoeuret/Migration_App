@@ -5,6 +5,7 @@ public class FlightController : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] FlightUIManager uiManager;
     [SerializeField] private BirdDatabase birdDatabase;
+    [SerializeField] public Vector3 rotationSpeed = new Vector3(0f, 100f, 0f); // degrees per second
     private GameObject spawnbird = null;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +21,10 @@ public class FlightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (spawnbird != null)
+        {
+            spawnbird.transform.Rotate(rotationSpeed * Time.deltaTime);
+        }
     }
 
     public void HandleEndOfFLight(bool success)
@@ -51,7 +55,7 @@ public class FlightController : MonoBehaviour
         cam.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
         //Display prefab of new bird and make it rotate
-        Instantiate(birdDatabase.GetBirdPrefab(generatedBird), new Vector3(0f, 0f, 73.4f), Quaternion.identity);
+        spawnbird = Instantiate(birdDatabase.GetBirdPrefab(generatedBird), new Vector3(0f, 0f, 73.4f), Quaternion.identity);
 
         //Switch panel
         uiManager.ShowEndOfFlight(generatedBird);
