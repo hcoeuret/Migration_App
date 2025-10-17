@@ -9,6 +9,7 @@ public class MainFlightPanel : MonoBehaviour, IPanel
     [SerializeField] private Slider timeLeftSlider;
     [SerializeField] private TMP_Text counterText;
     [SerializeField] private Button cancelButton;
+    [SerializeField] private FlightController fcontroller;
     
     private Coroutine timerCoroutine;
 
@@ -47,7 +48,7 @@ public class MainFlightPanel : MonoBehaviour, IPanel
             timerCoroutine = null;
         }
 
-        AppManager.Instance.SwitchToMapScene();
+        fcontroller.HandleEndOfFLight(false);
     }
 
     private IEnumerator TimerCoroutine()
@@ -61,7 +62,8 @@ public class MainFlightPanel : MonoBehaviour, IPanel
         }
         if (counterValue == 0)
         {
-            AppManager.Instance.SwitchToMapScene();
+            counterText.text = counterValue.ToString();
+            fcontroller.HandleEndOfFLight(true);
         }
         
     }

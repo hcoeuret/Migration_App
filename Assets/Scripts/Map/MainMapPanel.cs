@@ -6,7 +6,7 @@ public class MainMapPanel : MonoBehaviour, IPanel
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private Button startFlightButton;
-    [SerializeField] private MapManager mapManager;
+    [SerializeField] private MapController mapController;
     [SerializeField] private TMP_Text distanceText;
     MapUIManager mapUIManager;
     void Start()
@@ -30,12 +30,12 @@ public class MainMapPanel : MonoBehaviour, IPanel
 
     private void OnEnable()
     {
-        mapManager.OnDistanceChanged += UpdateDistanceText;
+        mapController.OnDistanceChanged += UpdateDistanceText;
     }
 
     private void OnDisable()
     {
-        mapManager.OnDistanceChanged -= UpdateDistanceText;
+        mapController.OnDistanceChanged -= UpdateDistanceText;
     }
 
     private void UpdateDistanceText(int newScore)

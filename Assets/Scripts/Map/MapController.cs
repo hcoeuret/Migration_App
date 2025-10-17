@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MapManager : MonoBehaviour
+public class MapController : MonoBehaviour
 {
     [SerializeField] GameObject crossPf;
     [SerializeField] GameObject crossFuturePf;

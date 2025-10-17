@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startFlightButton: {fileID: 632184404}
-  mapManager: {fileID: 1488157438}
+  mapController: {fileID: 1488157438}
   distanceText: {fileID: 791786548}
 --- !u!1 &690088422
 GameObject:
@@ -1527,7 +1527,7 @@ GameObject:
   - component: {fileID: 1488157439}
   - component: {fileID: 1488157438}
   m_Layer: 0
-  m_Name: MapManager
+  m_Name: MapController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
