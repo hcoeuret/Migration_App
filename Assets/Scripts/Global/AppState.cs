@@ -26,6 +26,7 @@ public class AppState : MonoBehaviour
         futurePos = new Vector3(0f, 0f, 0f);
 
         playerBirds = new List<BirdType>();
+        playerBirds.Add(BirdType.Mallard);
     }
 
     // Update is called once per frame

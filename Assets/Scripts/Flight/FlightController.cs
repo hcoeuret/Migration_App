@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class FlightController : MonoBehaviour
 {
@@ -10,12 +12,13 @@ public class FlightController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cam.transform.position = new Vector3(0, 16, 0);
-        cam.transform.rotation = Quaternion.Euler(-46f, 0f, 0f);
+        cam.transform.position = new Vector3(125, 11, 480);
+        cam.transform.rotation = Quaternion.Euler(28f, -405f, 1f);
         if (spawnbird != null)
         {
             Destroy(spawnbird);
         }
+        SpawnBirdList();
     }
 
     // Update is called once per frame
@@ -24,6 +27,24 @@ public class FlightController : MonoBehaviour
         if (spawnbird != null)
         {
             spawnbird.transform.Rotate(rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    void SpawnBirdList()
+    {
+        int maxDisplay = 6;
+        int count = Mathf.Min(AppState.Instance.playerBirds.Count, maxDisplay);
+        List<Vector3> positions = new List<Vector3>();
+        positions.Add(new Vector3(80f, -12f, 512f));
+        positions.Add(new Vector3(90f, -12f, 506f));
+        positions.Add(new Vector3(90f, -12f, 518f));
+        positions.Add(new Vector3(100f, -12f, 500f));
+        positions.Add(new Vector3(100f, -12f, 512f));
+        positions.Add(new Vector3(100f, -12f, 524f));
+
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(birdDatabase.GetBirdPrefab(AppState.Instance.playerBirds[i]), positions[i], Quaternion.identity);
         }
     }
 
