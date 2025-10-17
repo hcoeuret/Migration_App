@@ -29,6 +29,7 @@ public class FlightController : MonoBehaviour
         BirdType generatedBird;
         if (success)
         {
+            AppState.Instance.playerPos = AppState.Instance.futurePos;
             if (Random.Range(0, 10) > 3)
             {
                 generatedBird = BirdType.Mallard;

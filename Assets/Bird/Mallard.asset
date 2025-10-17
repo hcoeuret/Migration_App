@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53fd2d68c6cdb841abac327699f7fef, type: 3}
   m_Name: Mallard
   m_EditorClassIdentifier: 
+  type: 0
+  prefab: {fileID: 8565706032972910983, guid: 5f1bb8ad12fecc745b398e8447e16bd4, type: 3}

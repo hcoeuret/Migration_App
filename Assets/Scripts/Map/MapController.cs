@@ -9,14 +9,12 @@ public class MapController : MonoBehaviour
     private GameObject currentFutureCross;
     [SerializeField] Camera cam;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] Vector3 curPos = new Vector3(0,0,0);
+    [SerializeField] private Vector3 curPos;
     public event Action<int> OnDistanceChanged;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        float xPos = AppState.Instance.playerPos.x;
-        float yPos = AppState.Instance.playerPos.y;
-        Vector3 curPos = new Vector3(xPos, yPos, 0f);
+        curPos = AppState.Instance.playerPos;
         Quaternion rotation = Quaternion.Euler(0f, 45f, 0f);
 
         Vector3 cameraPos = curPos + new Vector3(0, 40, -20);
@@ -52,7 +50,9 @@ public class MapController : MonoBehaviour
                 currentFutureCross = Instantiate(crossFuturePf, futurePos, rotation);
                 float distance = Vector3.Distance(curPos, futurePos);
                 AppState.Instance.counter = (int)distance;
+                AppState.Instance.futurePos = futurePos;
                 OnDistanceChanged?.Invoke((int)distance);
+                
 
             }
         }

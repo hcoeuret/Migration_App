@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class AppState : MonoBehaviour
 {
     public static AppState Instance { get; private set; }
-    public Vector2 playerPos;
+    public Vector3 playerPos;
+    public Vector3 futurePos;
     public int counter = 0;
     public List<BirdType> playerBirds;
 
@@ -21,8 +22,8 @@ public class AppState : MonoBehaviour
         Instance = this;
 
         DontDestroyOnLoad(gameObject);
-        playerPos.x = 0;
-        playerPos.y = 0;
+        playerPos = new Vector3(0f, 0f, 0f);
+        futurePos = new Vector3(0f, 0f, 0f);
 
         playerBirds = new List<BirdType>();
     }
