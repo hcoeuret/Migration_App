@@ -4,4 +4,5 @@ public enum PanelType
 {
     MapMainPanel,
     FlightMainPanel,
+    FlightEndPanel,
 }

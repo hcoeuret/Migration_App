@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 167057823}
   - component: {fileID: 167057822}
   m_Layer: 5
-  m_Name: CancelButton
+  m_Name: BackToMapButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1941864238}
-  m_Father: {fileID: 1290825810}
+  m_Father: {fileID: 2117377082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1256331615}
+  uiManager: {fileID: 954070087}
+  birdDatabase: {fileID: 11400000, guid: c1cb1801a82b1c6438bd5d25eb9d4cc3, type: 2}
 --- !u!4 &199353850
 Transform:
   m_ObjectHideFlags: 0
@@ -435,67 +437,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563759930}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &653629444
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 73.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 17189651061028711, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 505644714390193683, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_Name
-      value: Eagle
-      objectReference: {fileID: 0}
-    - target: {fileID: 505644714390193683, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e0824672803f8ba488383d38b16fd29e, type: 3}
 --- !u!1 &659537158
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +837,9 @@ MonoBehaviour:
   panelsInput:
   - pType: 1
     panelGO: {fileID: 1186324297}
-  cam: {fileID: 0}
+  - pType: 2
+    panelGO: {fileID: 2117377081}
+  cam: {fileID: 1256331615}
 --- !u!1 &1040013645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1475,6 @@ RectTransform:
   m_Children:
   - {fileID: 1186324298}
   - {fileID: 2117377082}
-  - {fileID: 167057821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2280,13 +2222,14 @@ GameObject:
   - component: {fileID: 2117377082}
   - component: {fileID: 2117377084}
   - component: {fileID: 2117377083}
+  - component: {fileID: 2117377085}
   m_Layer: 5
   m_Name: EndFlightPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2117377082
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2301,6 +2244,7 @@ RectTransform:
   m_Children:
   - {fileID: 659537159}
   - {fileID: 1704840485}
+  - {fileID: 167057821}
   m_Father: {fileID: 1290825810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2346,6 +2290,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117377081}
   m_CullTransparentMesh: 1
+--- !u!114 &2117377085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117377081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b755c51bc8ef344a9627654ae4f13a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backToMapButton: {fileID: 167057822}
+  nameText: {fileID: 1704840486}
+  titleText: {fileID: 659537160}
+  fcontroller: {fileID: 199353849}
 --- !u!1001 &5405418252600121023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2418,4 +2378,3 @@ SceneRoots:
   - {fileID: 954070086}
   - {fileID: 1581417293}
   - {fileID: 199353850}
-  - {fileID: 653629444}

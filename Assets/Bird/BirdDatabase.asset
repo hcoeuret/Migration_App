@@ -15,4 +15,4 @@ MonoBehaviour:
   birds:
   - {fileID: 11400000, guid: ff86d3f9a88dad447b0cc5ae7a905b35, type: 2}
   - {fileID: 11400000, guid: 6179bea423a4c044ca082693987d1c93, type: 2}
-  - {fileID: 11400000, guid: 6179bea423a4c044ca082693987d1c93, type: 2}
+  - {fileID: 11400000, guid: b775a36f8c935a74f9c5dd857f526c3c, type: 2}

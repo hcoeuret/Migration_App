@@ -12,4 +12,14 @@ public class FlightUIManager : UIManager
         DisplayPanel(PanelType.FlightMainPanel, null);
     }
 
+    public void ShowEndOfFlight(BirdType bird)
+    {
+        DisplayPanel(PanelType.FlightEndPanel, bird);
+    }
+
+    public void ShowMainFlight()
+    {
+        DisplayPanel(PanelType.FlightMainPanel, null);
+    }
+
 }

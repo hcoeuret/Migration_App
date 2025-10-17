@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
                 entry.Value.SetActive(false);
             }
             panels[pType].SetActive(true);
-            panels[pType].GetComponent<IPanel>()?.ShowPanel(null);            ;
+            panels[pType].GetComponent<IPanel>()?.ShowPanel(arg);            ;
         }
     }
 
